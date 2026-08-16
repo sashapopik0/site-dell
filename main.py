@@ -4,11 +4,21 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from pathlib import Path
+from starlette.middleware.base import BaseHTTPMiddleware
 
 BASE_DIR: Path = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
 app = FastAPI()
+
+class HTTPSRedirectMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        # Заставляет FastAPI думать, что запрос пришел по HTTPS
+        request.scope["scheme"] = "https"
+        response = await call_next(request)
+        return response
+
+app.add_middleware(HTTPSRedirectMiddleware)
 
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
