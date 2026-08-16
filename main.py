@@ -16,7 +16,7 @@ app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 async def index(request : Request):
     
     context = {
-        'page_name': "Главная"
+        'page_name': "Dell Technologies — ноутбуки, серверы и корпоративные решения"
     }
     
     return templates.TemplateResponse(request=request, name="index.html", context=context)

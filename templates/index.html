@@ -1,19 +1,158 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page_name }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_name }}</title>
+<meta name="description" content="Dell Technologies: ноутбуки, ПК, серверы, СХД и AI-инфраструктура для дома и бизнеса. Официальный сайт Dell.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- =========================================================
+     АНАЛИТИКА — ЗАМЕНИТЕ ID ПЕРЕД ПУБЛИКАЦИЕЙ
+     G-XXXXXXXXXX  -> ваш Google Analytics 4 Measurement ID
+     GTM-XXXXXXX   -> ваш Google Tag Manager Container ID
+     00000000      -> ваш Yandex.Metrica Counter ID
+     ========================================================= -->
+<script>window.dataLayer = window.dataLayer || [];</script>
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Yandex.Metrica -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(00000000, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<!-- End Yandex.Metrica -->
+
+<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 </head>
 <body>
-    <header>
 
-    </header>
-    <main>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-    </main>
-    <footer>
-        
-    </footer>
+<!-- Yandex.Metrica (noscript) -->
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="logo">
+            <span class="logo-mark">
+                <img src="{{ url_for('static', path='image/logo_dell.png') }}" alt="logo">
+            </span>
+            <span class="logo-word">Dell Technologies</span>
+        </div>
+        <a class="cta-small" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('topbar')">На сайт Dell</a>
+    </div>
+</div>
+
+<header class="hero" id="top">
+    <span class="corner-tl"></span><span class="corner-br"></span>
+    <div class="hero-inner">
+        <span class="eyebrow">Ноутбуки · серверы · AI-инфраструктура</span>
+        <h1>Технологии, на которых держится ваша работа</h1>
+        <p class="lead">Dell Technologies — американская компания, основанная в 1984 году, которая производит ноутбуки, настольные ПК, серверы, системы хранения данных и решения для AI-инфраструктуры. Один бренд для дома, малого бизнеса и корпоративных дата-центров.</p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('hero_primary')">Перейти на dell.com</a>
+            <a class="btn btn-ghost" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('hero_secondary')">Смотреть каталог</a>
+        </div>
+    </div>
+</header>
+
+<section class="offer">
+    <div class="wrap">
+        <h2>Что предлагает Dell</h2>
+        <p>Dell делает ставку на прямые продажи и конфигурацию под задачу: вы выбираете процессор, память, накопители и сетевые адаптеры под конкретный сценарий — от учёбы и дома до серверной стойки в дата-центре. Компания входит в число крупнейших производителей ПК и серверного оборудования в мире и присутствует более чем в 180 странах.</p>
+    </div>
+</section>
+
+<section class="features" id="products">
+    <div class="wrap" style="padding:0;">
+        <p class="grid-eyebrow">Направления</p>
+        <h2>Что может заинтересовать вас у Dell</h2>
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag">01</span>
+                <h3>Ноутбуки и ПК</h3>
+                <p>Линейки XPS, Inspiron и Latitude — от компактных ультрабуков до рабочих станций для профессиональных задач.</p>
+                <a class="btn-mini" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('card_laptops')">Смотреть модели</a>
+            </div>
+            <div class="card">
+                <span class="tag">02</span>
+                <h3>Серверы PowerEdge</h3>
+                <p>Серверное оборудование под заказ: процессоры, объём памяти, RAID-конфигурации и сетевые адаптеры на выбор.</p>
+                <a class="btn-mini" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('card_servers')">Подробнее о серверах</a>
+            </div>
+            <div class="card">
+                <span class="tag">03</span>
+                <h3>AI-инфраструктура</h3>
+                <p>Решения для дата-центров на базе NVIDIA, представленные для задач машинного обучения и обработки данных.</p>
+                <a class="btn-mini" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('card_ai')">Изучить решения</a>
+            </div>
+            <div class="card">
+                <span class="tag">04</span>
+                <h3>Поддержка и сервис</h3>
+                <p>Гарантийное обслуживание, техническая поддержка и сервисные планы для дома и бизнеса.</p>
+                <a class="btn-mini" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('card_support')">Условия поддержки</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="final-cta">
+    <h2>Готовы посмотреть каталог Dell?</h2>
+    <p>Полный ассортимент, характеристики и актуальные цены — на официальном сайте.</p>
+    <a class="btn btn-primary" href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('final_cta')">Перейти на dell.com</a>
+</section>
+
+<footer>
+    <div class="footer-bottom">
+        <span>Неофициальная посадочная страница · сделана в учебных целях</span>
+        <a href="https://www.dell.com/ru-ru/lp" onclick="trackCTA('footer')">dell.com</a>
+    </div>
+</footer>
+
+<script>
+    // Единая функция трекинга кликов по CTA — GTM dataLayer + GA4 + Яндекс.Метрика
+    function trackCTA(label) {
+        if (window.dataLayer) {
+            dataLayer.push({ event: 'cta_click', cta_label: label });
+        }
+        if (typeof gtag === 'function') {
+            gtag('event', 'cta_click', { cta_label: label });
+        }
+        if (typeof ym === 'function') {
+            ym(00000000, 'reachGoal', 'cta_click', { label: label });
+        }
+    }
+</script>
+
 </body>
 </html>

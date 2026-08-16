@@ -1,0 +1,207 @@
+:root {
+        --paper: #eef1f4;
+        --panel: #ffffff;
+        --ink: #0b1520;
+        --ink-soft: #46525c;
+        --blueprint: #0b3b66;
+        --blueprint-deep: #082a4a;
+        --signal: #ff5a1f;
+        --accent: #1476c4;
+        --line: #c7cfd6;
+        --line-soft: #dde2e6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    body {
+        margin: 0;
+        background: var(--paper);
+        background-image:
+            linear-gradient(var(--line-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+        background-size: 32px 32px;
+        color: var(--ink);
+        font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--signal);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding-left: 6vw; padding-right: 6vw; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(238,241,244,0.9);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line-soft);
+    }
+    .topbar-inner {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0.9rem 6vw;
+        max-width: 1040px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 0.55rem; }
+    .logo-mark {
+        display: flex; align-items: center; justify-content: center;
+        height: 30px;
+    }
+    .logo-mark img {
+        height: 100%;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        display: block;
+    }
+    .logo-word {
+        font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em;
+    }
+    .topbar .cta-small {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.75rem; letter-spacing: 0.03em; text-transform: uppercase;
+        background: var(--blueprint); color: #fff; text-decoration: none;
+        padding: 0.55rem 1rem; border-radius: 999px;
+        transition: background 0.15s ease;
+    }
+    .topbar .cta-small:hover { background: var(--signal); }
+
+    /* ---------- Hero ---------- */
+    header.hero {
+        position: relative;
+        background: var(--blueprint);
+        background-image:
+            radial-gradient(circle at 82% 10%, rgba(255,90,31,0.18), transparent 55%),
+            linear-gradient(180deg, var(--blueprint) 0%, var(--blueprint-deep) 100%);
+        color: #eaf1f8;
+        padding: 4.5rem 6vw 5rem;
+        overflow: hidden;
+    }
+    header.hero::before, header.hero::after, .corner-tl, .corner-br {
+        content: ''; position: absolute; width: 22px; height: 22px;
+        border: 1.5px solid rgba(234,241,248,0.5);
+    }
+    header.hero::before { top: 18px; left: 18px; border-right: none; border-bottom: none; }
+    header.hero::after { top: 18px; right: 18px; border-left: none; border-bottom: none; }
+    .corner-tl { bottom: 18px; left: 18px; border-right: none; border-top: none; }
+    .corner-br { bottom: 18px; right: 18px; border-left: none; border-top: none; }
+
+    .hero-inner { max-width: 720px; margin: 0 auto; text-align: left; }
+    .eyebrow {
+        display: inline-block;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+        color: #8fb4d6; margin-bottom: 1rem;
+        border: 1px solid rgba(143,180,214,0.4);
+        padding: 0.3rem 0.7rem; border-radius: 999px;
+    }
+    header.hero h1 {
+        font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+        font-size: clamp(2rem, 5vw, 3.1rem);
+        line-height: 1.12; margin: 0 0 1.1rem; letter-spacing: -0.01em;
+    }
+    header.hero p.lead {
+        font-size: 1.08rem; color: #cfe0ee; max-width: 54ch; margin: 0 0 2rem;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    .btn {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.82rem; letter-spacing: 0.03em; text-transform: uppercase;
+        text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.85rem 1.4rem; border-radius: 999px;
+        transition: transform 0.12s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .btn::after { content: '→'; transition: transform 0.15s ease; }
+    .btn:hover::after { transform: translateX(3px); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--signal); color: #0b1520; }
+    .btn-primary:hover { background: #ff7a49; }
+    .btn-ghost { background: transparent; color: #eaf1f8; border: 1px solid rgba(234,241,248,0.4); }
+    .btn-ghost:hover { border-color: #eaf1f8; background: rgba(234,241,248,0.08); }
+
+    /* ---------- Offer ---------- */
+    section.offer { padding: 4rem 6vw 1rem; }
+    section.offer .wrap { max-width: 720px; padding: 0; }
+    section.offer h2 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin: 0 0 1rem;
+    }
+    section.offer p { color: var(--ink-soft); max-width: 60ch; margin: 0; }
+
+    /* ---------- Feature grid ---------- */
+    section.features { padding: 3.5rem 6vw; }
+    .grid-eyebrow {
+        font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+        letter-spacing: 0.16em; text-transform: uppercase; color: var(--blueprint);
+        margin: 0 0 0.6rem;
+    }
+    section.features h2 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; margin: 0 0 2rem; max-width: 32ch;
+    }
+    .card-grid {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem;
+    }
+    .card {
+        background: var(--panel); border: 1px solid var(--line-soft);
+        border-radius: 10px; padding: 1.6rem;
+        display: flex; flex-direction: column; gap: 0.7rem;
+    }
+    .card .tag {
+        width: 34px; height: 34px; border-radius: 8px;
+        background: rgba(20,118,196,0.1); color: var(--accent);
+        display: flex; align-items: center; justify-content: center;
+        font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; font-weight: 500;
+    }
+    .card h3 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 1.08rem; margin: 0;
+    }
+    .card p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+    .card .btn-mini {
+        margin-top: 0.3rem; align-self: flex-start;
+        font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+        text-transform: uppercase; letter-spacing: 0.03em;
+        color: var(--blueprint); text-decoration: none;
+        display: inline-flex; align-items: center; gap: 0.35rem;
+    }
+    .card .btn-mini::after { content: '→'; transition: transform 0.15s ease; }
+    .card .btn-mini:hover::after { transform: translateX(3px); }
+
+    /* ---------- Final CTA ---------- */
+    section.final-cta {
+        margin: 4rem 6vw 0; padding: 3rem 2.2rem;
+        background: var(--blueprint-deep); border-radius: 14px;
+        text-align: center; color: #eaf1f8;
+    }
+    section.final-cta h2 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin: 0 0 0.6rem;
+    }
+    section.final-cta p { color: #b9cfe2; margin: 0 0 1.6rem; }
+
+    /* ---------- Footer ---------- */
+    footer {
+        margin-top: 3rem; background: var(--blueprint-deep); color: #cfe0ee;
+        padding: 2.5rem 6vw 1.5rem;
+    }
+    .footer-bottom {
+        max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap;
+        justify-content: space-between; align-items: center; gap: 0.75rem;
+        font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: #6f93b6;
+        border-top: 1px solid rgba(207,224,238,0.15); padding-top: 1.5rem;
+    }
+    .footer-bottom a { color: #9cc2e2; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    @media (max-width: 680px) {
+        .card-grid { grid-template-columns: 1fr; }
+        .topbar .cta-small { display: none; }
+    }
